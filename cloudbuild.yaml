@@ -1,0 +1,29 @@
+steps:
+#First Clone from Google Cloud Source Repository  
+- name: 'gcr.io/cloud-builders/git'
+  args: ['pull','https://github.com/anna41/ci-cd-test.git']
+
+#Build the image 
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build','-f','Dockerfile', '-t','europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}','.']
+
+#Push the image  
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push','europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}']
+  
+substitutions:
+    #GCP Specific configuration. Please DON'T change anything
+    _PROJECT: learn-gcp-with-mahesh
+    _ZONE: asia-south1-a
+    _GKE_CLUSTER: learn-gcp-with-mahesh-gke-cluster
+    
+    #Repository Specific configuration. DevOps can change this settings
+    _DEPLOYMENTNAME: hello-world-service
+    _CONTAINERNAME: hello-world-service    
+    _REPO_NAME: cicd-service
+    
+    # Developers ONLY change
+    _VERSION: v0.0.2
+    
+options:
+    substitution_option: 'ALLOW_LOOSE'
