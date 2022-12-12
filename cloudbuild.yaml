@@ -1,8 +1,4 @@
 steps:
-#First Clone from Google Cloud Source Repository  
-- name: 'gcr.io/cloud-builders/git'
-  args: ['pull','https://github.com/anna41/ci-cd-test.git']
-
 #Build the image 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build','-f','Dockerfile', '-t','europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}','.']
@@ -15,7 +11,7 @@ substitutions:
     #GCP Specific configuration. Please DON'T change anything
     _PROJECT: test-ci-cd
     _ZONE: europe-west3
-    _GKE_CLUSTER: autopilot-cluster-1
+    _GKE_CLUSTER: ci-cd-service
     
     #Repository Specific configuration. DevOps can change this settings
     _DEPLOYMENTNAME: ci-cd-service
