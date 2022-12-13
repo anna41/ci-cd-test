@@ -7,12 +7,16 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push','europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}']
   
-# Deploy container image to Cloud Run
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
-  args: ['run', 'deploy', 'ci-cd-service', '--image', 'europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}', '--region', '${_ZONE}']
-images:
-- europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}
+#Update the container image using kubectl set
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+  - 'set'
+  - 'image'
+  - 'deployment/${_DEPLOYMENTNAME}'
+  - 'ci-cd=europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
 
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
