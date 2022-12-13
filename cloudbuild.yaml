@@ -13,7 +13,7 @@ steps:
   - 'set'
   - 'image'
   - 'deployment/${_DEPLOYMENTNAME}'
-  - 'ci-cd=europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}'
+  - '{_CONTAINERNAME}=europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
