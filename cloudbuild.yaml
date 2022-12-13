@@ -22,7 +22,7 @@ substitutions:
     #GCP Specific configuration. Please DON'T change anything
     _PROJECT: test-ci-cd
     _ZONE: europe-west3
-    _GKE_CLUSTER: ci-cd-service
+    _GKE_CLUSTER: autopilot-cluster-1
     
     #Repository Specific configuration. DevOps can change this settings
     _DEPLOYMENTNAME: ci-cd-service
