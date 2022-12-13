@@ -10,7 +10,7 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'ci-cd-service', '--image', 'europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}', '--region', '_ZONE']
+  args: ['run', 'deploy', 'ci-cd-service', '--image', 'europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}', '--region', '${_ZONE}']
 images:
 - europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:${_VERSION}
 
