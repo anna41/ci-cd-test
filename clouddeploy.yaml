@@ -1,0 +1,26 @@
+---
+      apiVersion: deploy.cloud.google.com/v1beta1
+      kind: DeliveryPipeline
+      metadata:
+        name: ci-cd-service-test
+      description: Test Deployment Pipeline 
+      serialPipeline:
+        stages:
+        - targetId: develop
+        - targetId: production
+---
+      apiVersion: deploy.cloud.google.com/v1beta1
+      kind: Target
+      metadata:
+        name: develop
+      description: Develop Environment
+      gke:
+        cluster: projects/test-ci-cd-371415/locations/europe-west3/clusters/autopilot-cluster-1
+---
+      apiVersion: deploy.cloud.google.com/v1beta1
+      kind: Target
+      metadata:
+        name: production
+      description: Production Environment
+      gke:
+        cluster: projects/ci-cd-prod-371618/locations/europe-west3/clusters/ci-cd-test-prod
