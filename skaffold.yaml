@@ -2,4 +2,4 @@ apiVersion: skaffold/v2beta16
 kind: Config
 deploy:
   kubectl:
-    manifests: ["k8s/*.yaml"]
+    manifests: ["k8-arc-test/k8s/*.yaml"]
