@@ -11,4 +11,4 @@ steps:
       --delivery-pipeline=ci-cd-service-test
       --region=europe-west3
       --source=./
-      --images=europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:$SHORT_SHA
+      --images=ci-cd-service=europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:$SHORT_SHA
