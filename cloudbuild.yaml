@@ -2,18 +2,6 @@ steps:
   - name: 'gcr.io/k8s-skaffold/pack'
     entrypoint: 'pack'
     args: ['build', '--builder=gcr.io/buildpacks/builder', '--publish', 'europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:$SHORT_SHA']
-  - name: 'gcr.io/cloud-builders/git'
-    secretEnv: ['SSH_KEY']
-    entrypoint: 'bash'
-    args:
-    - -c
-    - |
-      echo "$$SSH_KEY" >> /root/.ssh/id_rsa
-      chmod 400 /root/.ssh/id_rsa
-      cp known_hosts.github /root/.ssh/known_hosts
-    volumes:
-    - name: 'ssh'
-      path: /root/.ssh
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'bash'
     args:
