@@ -1,9 +1,0 @@
-apiVersion: skaffold/v2beta29
-kind: Config
-metadata:
-  name: ci-cd-service
-deploy:
-  kubectl:
-    manifests:
-    - develop/deployment/ci-cd-service.deployment.yaml
-    - prod/deployment/ci-cd-service.deployment.yaml

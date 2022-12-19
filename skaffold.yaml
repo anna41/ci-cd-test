@@ -4,4 +4,4 @@ kind: Config
 metadata:
   name: ci-cd-service
 requires:
-  [git: {repo: https://github.com/anna41/k8-arc-test.git, path: skaffold.yaml, ref: main,sync: true}]
+  [git: {repo: https://github.com/anna41/k8-arc-test.git, path: skaffold.yaml, ref: main, sync: true}]
