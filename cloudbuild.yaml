@@ -1,7 +1,7 @@
 steps:
   - name: 'gcr.io/k8s-skaffold/pack'
     entrypoint: 'pack'
-    args: ['build', '--builder=gcr.io/buildpacks/builder', '--publish', 'europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:$SHORT_SHA']
+    args: ['build', '--builder=gcr.io/buildpacks/builder', '--publish', 'europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd:$SHORT_SHA']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'bash'
     args:
@@ -9,6 +9,6 @@ steps:
     - > 
       gcloud deploy releases create release-$BUILD_ID
       --delivery-pipeline=ci-cd-service-test
-      --region=europe-west3
+      --region=europe-west1
       --source=./
-      --images=ci-cd-service=europe-west3-docker.pkg.dev/test-ci-cd-371415/test/ci-cd:$SHORT_SHA
+      --images=ci-cd-service=europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd:$SHORT_SHA
