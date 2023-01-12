@@ -1,12 +1,10 @@
-
 apiVersion: skaffold/v2beta29
 kind: Config
 metadata:
   name: ci-cd-service
-requires:
-  - configs: []
-    git:
-      repo: https://github.com/anna41/k8-arc-test.git
-      path: skaffold.yaml
-      ref: main
-      sync: true
+deploy:
+  kubectl:
+    manifests:
+    - develop/deployment/ci-cd-service.deployment.yaml
+    - prod/deployment/ci-cd-service.deployment.yaml
+
