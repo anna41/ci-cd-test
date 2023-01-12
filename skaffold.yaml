@@ -1,10 +1,13 @@
 apiVersion: skaffold/v2beta29
 kind: Config
 metadata:
-  name: ci-cd-service
+  name: ci-cd-test
+build:
+  artifacts:
+  - image: europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd
+    docker:
+      dockerfile: Dockerfile
 deploy:
   kubectl:
     manifests:
-    - develop/deployment/ci-cd-service.deployment.yaml
-    - prod/deployment/ci-cd-service.deployment.yaml
-
+    - k8s/deploy-dev.deployment.yaml
