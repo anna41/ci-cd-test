@@ -4,7 +4,7 @@ metadata:
   name: ci-cd-test
 build:
   artifacts:
-  - image: europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd/test:v2
+  - image: europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd/test:$SHORT_SHA
     docker:
       dockerfile: Dockerfile
 deploy:
