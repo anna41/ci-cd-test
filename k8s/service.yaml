@@ -8,4 +8,4 @@ spec:
     targetPort: 3000
   type: LoadBalancer
   selector:
-    app: ci-cd-service
+    app: ci-cd
