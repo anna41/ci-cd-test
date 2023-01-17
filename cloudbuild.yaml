@@ -8,7 +8,7 @@ steps:
     - '-c'
     - > 
       gcloud deploy releases create release-$BUILD_ID
-      --delivery-pipeline=ci-cd-service
+      --delivery-pipeline=ci-cd
       --region=europe-west1
       --source=./
-      --images=ci-cd-service=europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd/test:v2
+      --images=ci-cd=europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd/test:v2
