@@ -1,7 +1,7 @@
 steps:
   - name: 'gcr.io/k8s-skaffold/pack'
     entrypoint: 'pack'
-    args: ['build', '--builder=gcr.io/buildpacks/builder', '--publish', 'europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd/test:=$SHORT_SHA']
+    args: ['build', '--builder=gcr.io/buildpacks/builder', '--publish', 'europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd/test:$SHORT_SHA']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'bash'
     args:
