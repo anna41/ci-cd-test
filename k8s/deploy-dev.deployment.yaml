@@ -3,21 +3,21 @@
   kind: Deployment
   metadata:
     labels:
-      app: ci-cd-service
-    name: ci-cd-service
+      app: ci-cd
+    name: ci-cd
   spec:
     replicas: 1
     selector:
       matchLabels:
-        app: ci-cd-service
+        app: ci-cd
     template:
       metadata:
         labels:
-          app: ci-cd-service
+          app: ci-cd
       spec:
         containers:
-          - name: ci-cd-service
-            image: ci-cd-service
+          - name: ci-cd
+            image: ci-cd
             ports:
               - containerPort: 3000
             resources:
