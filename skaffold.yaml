@@ -2,11 +2,10 @@ apiVersion: skaffold/v2beta29
 kind: Config
 metadata:
   name: ci-cd-test
-build:
-  artifacts:
-  - image: europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd/test
-    docker:
-      dockerfile: Dockerfile
-deploy:
-  kubectl:
-    manifests: ["k8s/*.yaml"]
+requires:
+  - configs: []
+    git:
+      repo: https://github.com/anna41/k8-arc-test.git
+      path: skaffold.yaml
+      ref: main
+      sync: true
