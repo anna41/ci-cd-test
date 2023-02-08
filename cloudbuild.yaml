@@ -8,7 +8,7 @@ steps:
     - '-c'
     - > 
       gcloud deploy releases create release-$BUILD_ID
-      --delivery-pipeline=ci-cd-service-test
+      --delivery-pipeline=ci-cd-service-test-new
       --region=europe-west1
       --source=./
       --images=ci-cd=europe-west1-docker.pkg.dev/test-ci-cd-374510/ci-cd/test:$SHORT_SHA
