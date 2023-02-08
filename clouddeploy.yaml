@@ -23,4 +23,4 @@
         name: production
       description: Production Environment
       gke:
-        cluster: projects/prod-374511/locations/us-west1/clusters/prod
+        cluster: projects/prod2-377212/locations/europe-west1/clusters/prod
