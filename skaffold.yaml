@@ -5,7 +5,7 @@ metadata:
 requires:
   - configs: []
     git:
-      repo: https://github.com/anna41/k8-arc-test
+      repo: git@github.com:anna41/k8-arc-test.git
       path: skaffold.yaml
       ref: main
       sync: true
