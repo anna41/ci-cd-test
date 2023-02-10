@@ -13,4 +13,3 @@ requires:
       path: skaffold.yaml
       ref: main
       sync: true
-      
