@@ -1,11 +1,11 @@
-apiVersion: skaffold/v4beta2
+apiVersion: skaffold/v2beta29
 kind: Config
 metadata:
   name: ci-cd-test
 requires:
   - configs: []
     git:
-      repo: https://github.com/anna41/k8-arc-test.git
+      repo: https://anna41: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@github.com/username/repository.git
       path: skaffold.yaml
       ref: main
       sync: true
