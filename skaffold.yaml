@@ -2,14 +2,10 @@ apiVersion: skaffold/v2beta29
 kind: Config
 metadata:
   name: ci-cd-test
-build:
-  cluster:
-    dockerConfig:
-      secretName: my-secret
 requires:
   - configs: []
     git:
-      repo: git@github.com:anna41/k8-arc-test.git
+      repo: https://github.com/anna41/k8-arc-test.git
       path: skaffold.yaml
       ref: main
       sync: true
